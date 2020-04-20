@@ -8,10 +8,6 @@ __pycache__/
 
 # DEJAVU
 *.pyc
-dejavu/wav
-dejavu/mp3
-*.wav
-*.mp3
 dejavu/.DS_Store
 *.swp
 *.cnf

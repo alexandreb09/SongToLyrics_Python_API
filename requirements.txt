@@ -10,3 +10,5 @@ scipy>=0.19.1
 six>=1.10.0
 wavio>=0.0.3
 flask>=1.0
+markdown>=3.2.1
+pygments>= 2.6.1

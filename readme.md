@@ -19,6 +19,7 @@
 
 
 ## 2. Installation
+
  1. Télécharger le projet:
     - Avec *git* : `git clone https://github.com/alexandreb09/SongToLyrics_Python_Flask.git`
     - Avec un navigateur depuis *GitHub*: [alexandreb09/SongToLyrics_Python_Flask](https://github.com/alexandreb09/SongToLyrics_Python_Flask)
@@ -26,20 +27,24 @@
  3. Créer un environnement Python: `python3 -m venv venv`
  4. Activer l'environnement Python: `source venv/bin/activate`
  5. Installer les dépendances: `pip install -r requirements.txt`
- 6. Créer une base de données MySQL (ici "`song_to_lyrics`"):
+ 6. Créer une base de données MySQL (ici "`song_to_lyrics`" en ligne de commande):
 
-        mysql -u root -p
-        Enter password: **********
-        mysql> CREATE DATABASE IF NOT EXISTS song_to_lyrics;
+```bash
+mysql -u root -p
+Enter password: **********
+mysql> CREATE DATABASE IF NOT EXISTS song_to_lyrics;
+```
 
  7. Importer la base de données `database\song_to_lyrics.sql`. Cette base de données se compose des 5 morceaux utilisés par défaut dans le module `dejavu`.
+
+
+ 8. Configurer les paramètres de connexion à la base de données dans le fichier `app/config.py`. 
  
  8. Lancer le server: `python run.py`
  
  
- 
- ## Notes:
- 
+## Notes
+
  - Il est important de lancer le server sur l'adresse `0.0.0.0` afin qu'il soit visible sur l'ensemble des appareils connectés à ce réseau. 
 
  - Sur l'application Android doit être connectée au même réseau que le server.
