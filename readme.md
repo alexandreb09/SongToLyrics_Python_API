@@ -42,6 +42,15 @@ mysql> CREATE DATABASE IF NOT EXISTS song_to_lyrics;
  
  8. Lancer le server: `python run.py`
  
+
+## Méthodes exposées
+
+ - `/` ou `/index`: page d'accueil du server, affiche le readme d'utilisation du server.
+ - `/check_connexion`: méthode utilisée par l'application Android pour tester la connexion au server
+ - `/find_sound`: méthode pour réaliser la reconnaissance d'un son
+   
+
+
  
 ## Notes
 

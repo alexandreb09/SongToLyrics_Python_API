@@ -68,7 +68,7 @@ def recognize_song():
         djv = Dejavu(config)
 
         # Recognize audio from a file
-        song_found = djv.recognize(FileRecognizer, "temp/test.mp3")
+        song_found = djv.recognize(FileRecognizer, FILE_PATH)
 
         print("\t Song recognition finished")
 
