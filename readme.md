@@ -29,7 +29,7 @@
  5. Installer les dépendances: `pip install -r requirements.txt`
  6. Créer une base de données MySQL (ici "`song_to_lyrics`" en ligne de commande):
 
-```bash
+```mysql
 mysql -u root -p
 Enter password: **********
 mysql> CREATE DATABASE IF NOT EXISTS song_to_lyrics;

@@ -6,12 +6,27 @@ from dejavu import Dejavu
 from dejavu.recognize import FileRecognizer
 from app.config import config
 
+import os
+
 # Markdown formatter
 import markdown
 
 # Delete warning message
 import warnings
 warnings.filterwarnings("ignore", category=Warning)
+
+PATH_FOLDER = "temp"
+FILE_NAME = "tmp.mp3"
+FILE_PATH = PATH_FOLDER + "/" + FILE_NAME
+
+# CREATE folder if unexisting
+if not os.path.isdir(FILE_PATH.split("/")[0]):
+    os.mkdir(PATH_FOLDER)
+
+# CREATE file if unexisting
+if not os.path.isfile(FILE_PATH):
+    open(FILE_PATH, 'w+').close()
+
 
 @app.route('/')
 @app.route('/index')
@@ -45,7 +60,8 @@ def recognize_song():
         # Read song from parameters -> download it as mp3 file    
         b = io.BytesIO(files[0].read())
         song = AudioSegment.from_file(b, format="3gp")
-        song.export("temp/test.mp3", format="mp3")
+
+        song.export(FILE_PATH, format="mp3")
 
         print("\t File song read\n\t Song recognition started...")        
         # create a Dejavu instance
@@ -60,7 +76,8 @@ def recognize_song():
             song_name = song_found.get('song_name').split("--")
             artist = song_name[0]
             title = song_name[1]
-            print("\t Song:\n\t - Music: {}\n\t - Artist: {}".format(title, artist))        
+            print("\t Song:\n\t\t - Music: {}\n\t\t - Artist: {}".format(title, artist))        
+
 
     print("\t Return response")        
     print("=" * 50)
